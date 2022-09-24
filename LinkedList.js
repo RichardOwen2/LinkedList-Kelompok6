@@ -83,7 +83,7 @@ class LinkedList {
         } else {
             while (current.getNext()) {
                 if (current.getNext().getValue() === value) {
-                    current.setNext(current.getNext().getNext());
+                    current.getNext().getNext() ? current.setNext(current.getNext().getNext()) : current.setNext(null)
                     this.length--;
                     return;
                 } else {
@@ -104,7 +104,7 @@ class LinkedList {
 
         while (current.getNext()) {
             if (value.includes(current.getNext().getValue())) {
-                current.setNext(current.getNext().getNext());
+                current.getNext().getNext() ? current.setNext(current.getNext().getNext()) : current.setNext(null);
                 this.length--;
             } else {
                 value.push(current.getNext().getValue());
@@ -200,13 +200,14 @@ try {
     const data = new LinkedList();
     data.add('a');
     data.add('b');
-    // data.add('c');
-    // data.add('d');
-    // data.add('e');
-    // data.add('f');
-    // data.add('g');
-    // data.add('h');
-    // data.add('i');
+    data.add('c');
+    data.add('d');
+    data.add('e');
+    data.add('f');
+    data.add('g');
+    data.add('h');
+    data.add('i');
+    data.add('i');
 
     data.showValue();
     data.swapTailHead();
